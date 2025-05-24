@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(
   cors({
-    origin: ['https://auth.mfe.app.br'],
+    origin: ['https://mfe.app.br', 'https://auth.mfe.app.br', 'https://dashboard.mfe.app.br'],
     credentials: true,
   }),
 );
