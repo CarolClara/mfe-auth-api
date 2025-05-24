@@ -5,7 +5,7 @@ export default async function logoutHandler(req: Request, res: Response) {
     httpOnly: false,
     secure: true,
     sameSite: 'none',
-    domain: '.localhost',
+    domain: process.env.DOMAIN,
     path: '/',
     signed: true,
   });
@@ -13,7 +13,7 @@ export default async function logoutHandler(req: Request, res: Response) {
     httpOnly: false,
     secure: true,
     sameSite: 'none',
-    domain: 'localhost',
+    domain: process.env.DOMAIN,
     path: '/',
     expires: new Date(0),
     signed: true,
