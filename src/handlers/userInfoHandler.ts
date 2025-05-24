@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { Request, Response } from 'express';
 
-import getMgmtToken from '@/config/managementToken';
+import getMgmtToken from '../config/managementToken';
 
 import jwt from 'jsonwebtoken';
 

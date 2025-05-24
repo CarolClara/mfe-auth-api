@@ -4,10 +4,10 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
-import loginHandler from '@/handlers/loginHandler';
-import logoutHandler from '@/handlers/logoutHandler';
-import registerHandler from '@/handlers/registerHandler';
-import userInfoHandler from '@/handlers/userInfoHandler';
+import loginHandler from './handlers/loginHandler';
+import logoutHandler from './handlers/logoutHandler';
+import registerHandler from './handlers/registerHandler';
+import userInfoHandler from './handlers/userInfoHandler';
 
 dotenv.config();
 

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import getMgmtToken from '@/config/managementToken';
+import getMgmtToken from '../config/managementToken';
 
-import { IRolePayload } from '@/types/Login';
+import { IRolePayload } from '../types/Login';
 
 export default async function setUserRole(payload: IRolePayload) {
   try {

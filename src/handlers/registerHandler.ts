@@ -2,12 +2,12 @@ import axios from 'axios';
 
 import { Request, Response } from 'express';
 
-import getMgmtToken from '@/config/managementToken';
+import getMgmtToken from '../config/managementToken';
 
-import { IRegisterPayload } from '@/types/Login';
-import { IUser } from '@/types/User';
+import { IRegisterPayload } from '../types/Login';
+import { IUser } from '../types/User';
 
-import setUserRole from '@/handlers/roleHandler';
+import setUserRole from '../handlers/roleHandler';
 
 export default async function registerHandler(
   req: Request<object, object, IRegisterPayload>,
