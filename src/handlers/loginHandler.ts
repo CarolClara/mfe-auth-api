@@ -33,7 +33,7 @@ export default async function loginHandler(
       httpOnly: false,
       secure: true,
       sameSite: 'none',
-      domain: 'localhost',
+      domain: process.env.DOMAIN,
       path: '/',
       maxAge: expires_in * 1000,
       signed: true,
