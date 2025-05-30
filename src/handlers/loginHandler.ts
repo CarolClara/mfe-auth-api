@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { Request, Response } from 'express';
 
-import { ILoginPayload } from '../types/Login';
+import { ILoginPayload } from '@/types/Login';
 
 export default async function loginHandler(
   req: Request<object, object, ILoginPayload>,
@@ -43,7 +43,7 @@ export default async function loginHandler(
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.error(error.response?.data || error.message);
-    res.status(401).json({ message: 'login_user_error' });
+    const message = error.response?.data.error_description || error.message;
+    res.status(402).json({ error: 'login_user_error', message });
   }
 }

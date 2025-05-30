@@ -2,12 +2,12 @@ import axios from 'axios';
 
 import { Request, Response } from 'express';
 
-import getMgmtToken from '../config/managementToken';
+import getMgmtToken from '@/config/managementToken';
 
-import { IRegisterPayload } from '../types/Login';
-import { IUser } from '../types/User';
+import { IRegisterPayload } from '@/types/Login';
+import { IUser } from '@/types/User';
 
-import setUserRole from '../handlers/roleHandler';
+import setUserRole from '@/handlers/roleHandler';
 
 export default async function registerHandler(
   req: Request<object, object, IRegisterPayload>,
@@ -48,7 +48,7 @@ export default async function registerHandler(
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.error(error.response?.data || error.message);
-    res.status(500).json({ message: 'register_user_error' });
+    const message = error.response?.data.message || error.message;
+    res.status(500).json({ error: 'register_user_error', message });
   }
 }
