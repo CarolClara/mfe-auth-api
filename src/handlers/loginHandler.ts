@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { Request, Response } from 'express';
 
-import { ILoginPayload } from '@/types/Login';
+import { ILoginPayload } from '../types/Login';
 
 export default async function loginHandler(
   req: Request<object, object, ILoginPayload>,

@@ -6,30 +6,6 @@ import getMgmtToken from '../config/managementToken';
 
 import jwt from 'jsonwebtoken';
 
-// export async function userProfileHandler(req: Request, res: Response) {
-//   const token = req.signedCookies['auth_token'];
-//
-//   if (!token) {
-//     res.status(400).json({ message: 'user_unauthenticated' });
-//     return;
-//   }
-//
-//   try {
-//     const response = await axios.get(`https://${process.env.AUTH0_DOMAIN}/userinfo`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
-//
-//     res.status(200).json(response.data);
-//
-//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   } catch (error: any) {
-//     console.error(error.response?.data || error.message);
-//     res.status(401).json({ message: 'fetch_user_profile_error' });
-//   }
-// }
-
 export default async function userInfoHandler(req: Request, res: Response): Promise<void> {
   const token = req.signedCookies['auth_token'];
 
